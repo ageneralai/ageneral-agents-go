@@ -157,7 +157,16 @@ func collectStreamWithTimeout(ctx context.Context, mdl model.Model, req model.Re
 }
 
 func runStreamCollection(ctx context.Context, mdl model.Model, req model.Request, progress chan<- struct{}) streamOutcome {
+	progressClearLiveTextStreamed(ctx)
 	var final *model.Response
+	emit := streamEmitFromContext(ctx)
+	textBlockOpen := false
+	idxZero := 0
+	defer func() {
+		if emit != nil && textBlockOpen {
+			emit(ctx, StreamEvent{Type: EventContentBlockStop, Index: &idxZero})
+		}
+	}()
 	err := mdl.CompleteStream(ctx, req, func(sr model.StreamResult) error {
 		if progress != nil {
 			select {
@@ -165,7 +174,19 @@ func runStreamCollection(ctx context.Context, mdl model.Model, req model.Request
 			default:
 			}
 		}
+		if emit != nil && sr.Delta != "" {
+			if !textBlockOpen {
+				emit(ctx, StreamEvent{Type: EventContentBlockStart, Index: &idxZero, ContentBlock: &ContentBlock{Type: "text"}})
+				textBlockOpen = true
+				progressMarkLiveTextStreamed(ctx)
+			}
+			emit(ctx, StreamEvent{Type: EventContentBlockDelta, Index: &idxZero, Delta: &Delta{Type: "text_delta", Text: sr.Delta}})
+		}
 		if sr.Final && sr.Response != nil {
+			if emit != nil && textBlockOpen {
+				emit(ctx, StreamEvent{Type: EventContentBlockStop, Index: &idxZero})
+				textBlockOpen = false
+			}
 			final = sr.Response
 		}
 		return nil

@@ -9,6 +9,37 @@ import (
 	"github.com/stellarlinkco/agentsdk-go/pkg/tool"
 )
 
+// stateKeyProgressLiveTextStreamed marks that assistant text was forwarded from
+// provider stream deltas for this model completion; AfterAgent skips synthetic textBlock.
+const stateKeyProgressLiveTextStreamed = "progress.live_text_streamed"
+
+func progressClearLiveTextStreamed(ctx context.Context) {
+	st, ok := ctx.Value(model.MiddlewareStateKey).(*middleware.State)
+	if !ok || st == nil || st.Values == nil {
+		return
+	}
+	delete(st.Values, stateKeyProgressLiveTextStreamed)
+}
+
+func progressMarkLiveTextStreamed(ctx context.Context) {
+	st, ok := ctx.Value(model.MiddlewareStateKey).(*middleware.State)
+	if !ok || st == nil {
+		return
+	}
+	if st.Values == nil {
+		st.Values = map[string]any{}
+	}
+	st.Values[stateKeyProgressLiveTextStreamed] = true
+}
+
+func progressLiveTextStreamed(st *middleware.State) bool {
+	if st == nil || st.Values == nil {
+		return false
+	}
+	v, _ := st.Values[stateKeyProgressLiveTextStreamed].(bool)
+	return v
+}
+
 // streamEmitFunc is stored on context so tools can push incremental output
 // without depending on middleware details.
 type streamEmitFunc func(context.Context, StreamEvent)
@@ -57,9 +88,15 @@ func (p *progressMiddleware) AfterAgent(ctx context.Context, st *middleware.Stat
 
 	idx := 0
 	text := resp.Message.Content
-	p.textBlock(ctx, idx, text)
-	if text != "" {
-		idx++
+	if progressLiveTextStreamed(st) {
+		if text != "" {
+			idx++
+		}
+	} else {
+		p.textBlock(ctx, idx, text)
+		if text != "" {
+			idx++
+		}
 	}
 
 	for _, call := range resp.Message.ToolCalls {
@@ -78,6 +115,7 @@ func (p *progressMiddleware) AfterAgent(ctx context.Context, st *middleware.Stat
 	if len(resp.Message.ToolCalls) == 0 {
 		p.emit(ctx, StreamEvent{Type: EventAgentStop})
 	}
+	progressClearLiveTextStreamed(ctx)
 	return nil
 }
 
