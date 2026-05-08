@@ -271,8 +271,7 @@ func (rt *Runtime) RunStream(ctx context.Context, req Request) (<-chan StreamEve
 				if runErr != nil {
 					reason = "error"
 				}
-				//nolint:errcheck // session end events are non-critical notifications
-				rt.hooks.Publish(hooks.Event{
+				_ = rt.hooks.Publish(hooks.Event{ //nolint:errcheck // best-effort session end notification
 					Type:      hooks.SessionEnd,
 					SessionID: req.SessionID,
 					Payload:   hooks.SessionEndPayload{SessionID: req.SessionID, Reason: reason},

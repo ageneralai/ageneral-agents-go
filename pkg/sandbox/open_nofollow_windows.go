@@ -9,4 +9,3 @@ package sandbox
 func openNoFollow(path string) error {
 	return nil
 }
-

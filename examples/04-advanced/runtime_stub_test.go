@@ -25,4 +25,3 @@ func requireAPIKey(t *testing.T) {
 	t.Setenv("ANTHROPIC_API_KEY", "dummy")
 	t.Setenv("ANTHROPIC_AUTH_TOKEN", "")
 }
-

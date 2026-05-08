@@ -36,8 +36,8 @@ func progressLiveTextStreamed(st *middleware.State) bool {
 	if st == nil || st.Values == nil {
 		return false
 	}
-	v, _ := st.Values[stateKeyProgressLiveTextStreamed].(bool)
-	return v
+	v, ok := st.Values[stateKeyProgressLiveTextStreamed].(bool)
+	return ok && v
 }
 
 // streamEmitFunc is stored on context so tools can push incremental output

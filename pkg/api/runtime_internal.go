@@ -7,13 +7,13 @@ import (
 	"maps"
 	"strings"
 
-	"github.com/google/uuid"
 	hooks "github.com/ageneralai/ageneral-agents-go/pkg/hooks"
 	"github.com/ageneralai/ageneral-agents-go/pkg/message"
 	"github.com/ageneralai/ageneral-agents-go/pkg/middleware"
 	"github.com/ageneralai/ageneral-agents-go/pkg/model"
 	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/skills"
 	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/subagents"
+	"github.com/google/uuid"
 )
 
 type preparedRun struct {

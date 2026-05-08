@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/modelcontextprotocol/go-sdk/jsonrpc"
 	"github.com/ageneralai/ageneral-agents-go/pkg/mcp"
+	"github.com/modelcontextprotocol/go-sdk/jsonrpc"
 )
 
 func TestNonNilContext(t *testing.T) {
