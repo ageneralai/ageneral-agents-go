@@ -11,9 +11,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/stellarlinkco/agentsdk-go/examples/internal/demomodel"
-	"github.com/stellarlinkco/agentsdk-go/pkg/api"
-	modelpkg "github.com/stellarlinkco/agentsdk-go/pkg/model"
+	"github.com/ageneralai/ageneral-agents-go/examples/internal/demomodel"
+	"github.com/ageneralai/ageneral-agents-go/pkg/api"
+	modelpkg "github.com/ageneralai/ageneral-agents-go/pkg/model"
 )
 
 const defaultModel = "claude-sonnet-4-5-20250929"

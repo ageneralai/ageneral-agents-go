@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/config"
+	"github.com/ageneralai/ageneral-agents-go/pkg/config"
 )
 
 type mcpServer struct {

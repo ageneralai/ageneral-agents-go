@@ -10,13 +10,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/config"
-	"github.com/stellarlinkco/agentsdk-go/pkg/message"
-	"github.com/stellarlinkco/agentsdk-go/pkg/model"
-	"github.com/stellarlinkco/agentsdk-go/pkg/runtime/skills"
-	"github.com/stellarlinkco/agentsdk-go/pkg/runtime/subagents"
-	"github.com/stellarlinkco/agentsdk-go/pkg/sandbox"
-	"github.com/stellarlinkco/agentsdk-go/pkg/tool"
+	"github.com/ageneralai/ageneral-agents-go/pkg/config"
+	"github.com/ageneralai/ageneral-agents-go/pkg/message"
+	"github.com/ageneralai/ageneral-agents-go/pkg/model"
+	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/skills"
+	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/subagents"
+	"github.com/ageneralai/ageneral-agents-go/pkg/sandbox"
+	"github.com/ageneralai/ageneral-agents-go/pkg/tool"
 )
 
 func availableTools(registry *tool.Registry, whitelist map[string]struct{}) []model.ToolDefinition {

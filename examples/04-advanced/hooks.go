@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/hooks"
+	"github.com/ageneralai/ageneral-agents-go/pkg/hooks"
 )
 
 type hookBundle struct {

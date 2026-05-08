@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/runtime/skills"
+	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/skills"
 )
 
 func TestLazyLoadViaRegistry(t *testing.T) {

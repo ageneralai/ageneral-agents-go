@@ -1,10 +1,10 @@
-.PHONY: test coverage lint build agentctl install clean
+.PHONY: test coverage lint build cli install clean
 
 GO ?= go
 PKG ?= ./...
-CMD ?= ./cmd/agentctl
+CMD ?= ./cmd/cli
 BIN_DIR ?= bin
-BINARY ?= $(BIN_DIR)/agentctl
+BINARY ?= $(BIN_DIR)/cli
 COVERAGE_FILE ?= coverage.out
 
 test:
@@ -17,9 +17,9 @@ coverage:
 lint:
 	golangci-lint run
 
-build: agentctl
+build: cli
 
-agentctl:
+cli:
 	mkdir -p $(BIN_DIR)
 	$(GO) build -o $(BINARY) $(CMD)
 

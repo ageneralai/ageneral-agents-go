@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/sandbox"
+	"github.com/ageneralai/ageneral-agents-go/pkg/sandbox"
 )
 
 const defaultMaxFileBytes = 1 << 20 // 1 MiB

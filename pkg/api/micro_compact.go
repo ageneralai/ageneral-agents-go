@@ -5,7 +5,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/message"
+	"github.com/ageneralai/ageneral-agents-go/pkg/message"
 )
 
 const microCompactToolResultPrefix = "[output truncated, "

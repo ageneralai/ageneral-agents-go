@@ -10,10 +10,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/stellarlinkco/agentsdk-go/examples/internal/demomodel"
-	"github.com/stellarlinkco/agentsdk-go/pkg/api"
-	"github.com/stellarlinkco/agentsdk-go/pkg/hooks"
-	modelpkg "github.com/stellarlinkco/agentsdk-go/pkg/model"
+	"github.com/ageneralai/ageneral-agents-go/examples/internal/demomodel"
+	"github.com/ageneralai/ageneral-agents-go/pkg/api"
+	"github.com/ageneralai/ageneral-agents-go/pkg/hooks"
+	modelpkg "github.com/ageneralai/ageneral-agents-go/pkg/model"
 )
 
 var (

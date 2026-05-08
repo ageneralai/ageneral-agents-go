@@ -10,10 +10,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/api"
-	"github.com/stellarlinkco/agentsdk-go/pkg/hooks"
-	"github.com/stellarlinkco/agentsdk-go/pkg/model"
-	"github.com/stellarlinkco/agentsdk-go/pkg/tool"
+	"github.com/ageneralai/ageneral-agents-go/pkg/api"
+	"github.com/ageneralai/ageneral-agents-go/pkg/hooks"
+	"github.com/ageneralai/ageneral-agents-go/pkg/model"
+	"github.com/ageneralai/ageneral-agents-go/pkg/tool"
 )
 
 var safetyHookFatal = log.Fatal

@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/runtime/skills"
-	"github.com/stellarlinkco/agentsdk-go/pkg/runtime/subagents"
+	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/skills"
+	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/subagents"
 )
 
 func TestRuntimeRunTeamAutoSelectDelegatesToSubagentManager(t *testing.T) {

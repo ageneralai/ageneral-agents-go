@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/tool"
-	toolbuiltin "github.com/stellarlinkco/agentsdk-go/pkg/tool/builtin"
+	"github.com/ageneralai/ageneral-agents-go/pkg/tool"
+	toolbuiltin "github.com/ageneralai/ageneral-agents-go/pkg/tool/builtin"
 )
 
 type stubMetadataTool struct{}

@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	hooks "github.com/stellarlinkco/agentsdk-go/pkg/hooks"
+	hooks "github.com/ageneralai/ageneral-agents-go/pkg/hooks"
 )
 
 func TestPreToolUseAllowsInputModification(t *testing.T) {

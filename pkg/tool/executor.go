@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/sandbox"
+	"github.com/ageneralai/ageneral-agents-go/pkg/sandbox"
 )
 
 // Executor wires tool registry lookup with sandbox enforcement.

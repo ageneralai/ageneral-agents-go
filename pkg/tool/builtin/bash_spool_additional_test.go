@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/tool"
+	"github.com/ageneralai/ageneral-agents-go/pkg/tool"
 )
 
 func TestBashOutputSpoolFinalizeTruncated(t *testing.T) {

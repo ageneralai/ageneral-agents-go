@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/sandbox"
+	"github.com/ageneralai/ageneral-agents-go/pkg/sandbox"
 )
 
 func TestFileSandboxReadFile_StatAndReadErrors(t *testing.T) {

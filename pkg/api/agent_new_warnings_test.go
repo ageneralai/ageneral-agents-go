@@ -7,7 +7,7 @@ import (
 	"testing"
 	"testing/fstest"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/model"
+	"github.com/ageneralai/ageneral-agents-go/pkg/model"
 )
 
 func TestRuntimeNewContinuesOnEmbeddedHooksAndLoaderWarnings(t *testing.T) {

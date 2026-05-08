@@ -12,8 +12,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/api"
-	modelpkg "github.com/stellarlinkco/agentsdk-go/pkg/model"
+	"github.com/ageneralai/ageneral-agents-go/pkg/api"
+	modelpkg "github.com/ageneralai/ageneral-agents-go/pkg/model"
 )
 
 var osExit = os.Exit

@@ -4,8 +4,8 @@ import (
 	"context"
 	"strings"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/message"
-	"github.com/stellarlinkco/agentsdk-go/pkg/model"
+	"github.com/ageneralai/ageneral-agents-go/pkg/message"
+	"github.com/ageneralai/ageneral-agents-go/pkg/model"
 )
 
 func isPromptTooLongError(err error) bool {

@@ -4,7 +4,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/middleware"
+	"github.com/ageneralai/ageneral-agents-go/pkg/middleware"
 )
 
 func TestOptionsWithDefaults(t *testing.T) {

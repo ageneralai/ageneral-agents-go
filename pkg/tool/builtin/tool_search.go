@@ -7,7 +7,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/tool"
+	"github.com/ageneralai/ageneral-agents-go/pkg/tool"
 )
 
 const ToolSearchName = "tool_search"

@@ -10,7 +10,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/gitignore"
+	"github.com/ageneralai/ageneral-agents-go/pkg/gitignore"
 )
 
 type grepSearchOptions struct {

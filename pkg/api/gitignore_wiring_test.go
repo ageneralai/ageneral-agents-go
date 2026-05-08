@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/config"
+	"github.com/ageneralai/ageneral-agents-go/pkg/config"
 	"github.com/stretchr/testify/require"
 )
 

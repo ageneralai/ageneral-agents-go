@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/runtime/skills"
+	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/skills"
 )
 
 type stubBodyHandler struct {

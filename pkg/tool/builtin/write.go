@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/sandbox"
-	"github.com/stellarlinkco/agentsdk-go/pkg/tool"
+	"github.com/ageneralai/ageneral-agents-go/pkg/sandbox"
+	"github.com/ageneralai/ageneral-agents-go/pkg/tool"
 )
 
 const writeDescription = `Writes a file within the configured sandbox (overwrites if it exists).`

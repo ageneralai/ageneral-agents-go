@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/config"
+	"github.com/ageneralai/ageneral-agents-go/pkg/config"
 )
 
 // loadSettings resolves settings.json using the new layered SettingsLoader and

@@ -10,7 +10,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/runtime/skills"
+	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/skills"
 )
 
 const (

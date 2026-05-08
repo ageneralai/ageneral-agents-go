@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/config"
+	"github.com/ageneralai/ageneral-agents-go/pkg/config"
 )
 
 func TestLoadSubagentDirNilFSAndSkipsNonMarkdown(t *testing.T) {

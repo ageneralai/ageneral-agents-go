@@ -4,8 +4,8 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/model"
-	"github.com/stellarlinkco/agentsdk-go/pkg/tool"
+	"github.com/ageneralai/ageneral-agents-go/pkg/model"
+	"github.com/ageneralai/ageneral-agents-go/pkg/tool"
 )
 
 func TestTraceEventCapture(t *testing.T) {

@@ -6,12 +6,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/api"
-	"github.com/stellarlinkco/agentsdk-go/pkg/config"
-	"github.com/stellarlinkco/agentsdk-go/pkg/hooks"
-	"github.com/stellarlinkco/agentsdk-go/pkg/model"
-	"github.com/stellarlinkco/agentsdk-go/pkg/runtime/skills"
-	"github.com/stellarlinkco/agentsdk-go/pkg/runtime/subagents"
+	"github.com/ageneralai/ageneral-agents-go/pkg/api"
+	"github.com/ageneralai/ageneral-agents-go/pkg/config"
+	"github.com/ageneralai/ageneral-agents-go/pkg/hooks"
+	"github.com/ageneralai/ageneral-agents-go/pkg/model"
+	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/skills"
+	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/subagents"
 )
 
 func TestPrintSummary_CoversAllSections(t *testing.T) {

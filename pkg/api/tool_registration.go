@@ -8,12 +8,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/config"
-	"github.com/stellarlinkco/agentsdk-go/pkg/model"
-	"github.com/stellarlinkco/agentsdk-go/pkg/runtime/skills"
-	"github.com/stellarlinkco/agentsdk-go/pkg/sandbox"
-	"github.com/stellarlinkco/agentsdk-go/pkg/tool"
-	toolbuiltin "github.com/stellarlinkco/agentsdk-go/pkg/tool/builtin"
+	"github.com/ageneralai/ageneral-agents-go/pkg/config"
+	"github.com/ageneralai/ageneral-agents-go/pkg/model"
+	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/skills"
+	"github.com/ageneralai/ageneral-agents-go/pkg/sandbox"
+	"github.com/ageneralai/ageneral-agents-go/pkg/tool"
+	toolbuiltin "github.com/ageneralai/ageneral-agents-go/pkg/tool/builtin"
 )
 
 func registerTools(registry *tool.Registry, opts Options, settings *config.Settings, skReg *skills.Registry) error {

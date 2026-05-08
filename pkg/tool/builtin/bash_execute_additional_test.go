@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/middleware"
+	"github.com/ageneralai/ageneral-agents-go/pkg/middleware"
 )
 
 func TestBashToolSetCommandLimitsAffectsValidator(t *testing.T) {

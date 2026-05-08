@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/sandbox"
+	"github.com/ageneralai/ageneral-agents-go/pkg/sandbox"
 )
 
 type stubTool struct {

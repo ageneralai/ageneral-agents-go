@@ -8,10 +8,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/config"
-	hooks "github.com/stellarlinkco/agentsdk-go/pkg/hooks"
-	"github.com/stellarlinkco/agentsdk-go/pkg/sandbox"
-	"github.com/stellarlinkco/agentsdk-go/pkg/tool"
+	"github.com/ageneralai/ageneral-agents-go/pkg/config"
+	hooks "github.com/ageneralai/ageneral-agents-go/pkg/hooks"
+	"github.com/ageneralai/ageneral-agents-go/pkg/sandbox"
+	"github.com/ageneralai/ageneral-agents-go/pkg/tool"
 )
 
 var newTracer = NewTracer

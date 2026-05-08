@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/sandbox"
+	"github.com/ageneralai/ageneral-agents-go/pkg/sandbox"
 )
 
 func TestGrepToolExecute_MissedValidationBranches(t *testing.T) {

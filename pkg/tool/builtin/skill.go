@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/runtime/skills"
-	"github.com/stellarlinkco/agentsdk-go/pkg/tool"
+	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/skills"
+	"github.com/ageneralai/ageneral-agents-go/pkg/tool"
 )
 
 const skillToolDescriptionHeader = `Execute a skill.

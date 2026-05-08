@@ -3,12 +3,12 @@ package api
 import (
 	"testing"
 
-	hooks "github.com/stellarlinkco/agentsdk-go/pkg/hooks"
-	"github.com/stellarlinkco/agentsdk-go/pkg/middleware"
-	"github.com/stellarlinkco/agentsdk-go/pkg/model"
-	"github.com/stellarlinkco/agentsdk-go/pkg/runtime/skills"
-	"github.com/stellarlinkco/agentsdk-go/pkg/runtime/subagents"
-	"github.com/stellarlinkco/agentsdk-go/pkg/tool"
+	hooks "github.com/ageneralai/ageneral-agents-go/pkg/hooks"
+	"github.com/ageneralai/ageneral-agents-go/pkg/middleware"
+	"github.com/ageneralai/ageneral-agents-go/pkg/model"
+	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/skills"
+	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/subagents"
+	"github.com/ageneralai/ageneral-agents-go/pkg/tool"
 )
 
 func TestOptionsFrozenClonesCollections(t *testing.T) {

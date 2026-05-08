@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/message"
-	"github.com/stellarlinkco/agentsdk-go/pkg/model"
+	"github.com/ageneralai/ageneral-agents-go/pkg/message"
+	"github.com/ageneralai/ageneral-agents-go/pkg/model"
 )
 
 var ErrStreamStall = errors.New("api: streaming stall detected")

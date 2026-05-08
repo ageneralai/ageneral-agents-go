@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/tool"
+	"github.com/ageneralai/ageneral-agents-go/pkg/tool"
 )
 
 func writeGrepFixture(t *testing.T, dir, name, content string) string {

@@ -13,7 +13,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/mcp"
+	"github.com/ageneralai/ageneral-agents-go/pkg/mcp"
 )
 
 // Registry keeps the mapping between tool names and implementations.

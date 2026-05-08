@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/api"
+	"github.com/ageneralai/ageneral-agents-go/pkg/api"
 )
 
 type stubRuntime struct {

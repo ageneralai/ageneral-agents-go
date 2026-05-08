@@ -3,8 +3,8 @@ package api
 import (
 	"testing"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/config"
-	hookspkg "github.com/stellarlinkco/agentsdk-go/pkg/hooks"
+	"github.com/ageneralai/ageneral-agents-go/pkg/config"
+	hookspkg "github.com/ageneralai/ageneral-agents-go/pkg/hooks"
 )
 
 func TestBuildSettingsHooksNil(t *testing.T) {

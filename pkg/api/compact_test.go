@@ -5,8 +5,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/message"
-	"github.com/stellarlinkco/agentsdk-go/pkg/model"
+	"github.com/ageneralai/ageneral-agents-go/pkg/message"
+	"github.com/ageneralai/ageneral-agents-go/pkg/model"
 )
 
 type compactStubModel struct {

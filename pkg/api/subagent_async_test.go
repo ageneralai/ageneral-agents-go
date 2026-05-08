@@ -8,9 +8,9 @@ import (
 	"testing"
 	"time"
 
-	hooks "github.com/stellarlinkco/agentsdk-go/pkg/hooks"
-	"github.com/stellarlinkco/agentsdk-go/pkg/message"
-	"github.com/stellarlinkco/agentsdk-go/pkg/runtime/subagents"
+	hooks "github.com/ageneralai/ageneral-agents-go/pkg/hooks"
+	"github.com/ageneralai/ageneral-agents-go/pkg/message"
+	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/subagents"
 )
 
 func TestRuntimeBindsSubagentCompletionToHooksAndHistory(t *testing.T) {

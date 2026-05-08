@@ -3,7 +3,7 @@ package api
 import (
 	"strings"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/message"
+	"github.com/ageneralai/ageneral-agents-go/pkg/message"
 )
 
 func msgWithTokens(role string, tokens int) message.Message {

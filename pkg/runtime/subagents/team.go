@@ -8,7 +8,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/runtime/skills"
+	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/skills"
 )
 
 var ErrEmptyTeam = errors.New("subagents: team has no members")

@@ -8,10 +8,10 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"github.com/stellarlinkco/agentsdk-go/pkg/api"
-	"github.com/stellarlinkco/agentsdk-go/pkg/config"
-	"github.com/stellarlinkco/agentsdk-go/pkg/model"
-	"github.com/stellarlinkco/agentsdk-go/pkg/runtime/skills"
+	"github.com/ageneralai/ageneral-agents-go/pkg/api"
+	"github.com/ageneralai/ageneral-agents-go/pkg/config"
+	"github.com/ageneralai/ageneral-agents-go/pkg/model"
+	"github.com/ageneralai/ageneral-agents-go/pkg/runtime/skills"
 )
 
 const iterationsPerBenchmark = 100
