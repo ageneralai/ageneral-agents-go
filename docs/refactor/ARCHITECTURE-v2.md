@@ -237,7 +237,7 @@ type Runtime struct {
 - `tokens` -- token tracking is derivable from model responses
 - `recorder` -- hook recording folded into per-request state
 - `sessionGate` -- concurrent session guard removed (callers manage)
-- `historyPersister` -- disk persistence removed from core
+- `historyPersister` -- disk persistence removed from core; injectable via `Options.SessionStore` interface
 - `rulesLoader` -- rules loaded once at init, not stored as field
 - `ownsTaskStore` -- gone with `taskStore`
 - `sandbox` -- moved to tool executor concern
@@ -696,6 +696,11 @@ type Options struct {
     Skills           []SkillRegistration
     Subagents        []SubagentRegistration
     CustomTools      []tool.Tool
+
+    // Session persistence (optional)
+    // Load is called on first access of a sessionID; Save after each turn.
+    // Nil disables persistence (in-memory only).
+    SessionStore SessionStore
 
     // Metadata
     EntryPoint EntryPoint

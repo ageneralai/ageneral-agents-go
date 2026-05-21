@@ -179,6 +179,9 @@ type Options struct {
 	Sandbox          SandboxOptions
 	AutoCompact      CompactConfig
 	OTEL             OTELConfig
+	// SessionStore persists conversation history across process restarts.
+	// Load is called on first access of a sessionID; Save is called after each turn.
+	SessionStore SessionStore
 	fsLayer          *config.FS
 	settingsSnapshot *config.Settings
 	skReg            *skills.Registry

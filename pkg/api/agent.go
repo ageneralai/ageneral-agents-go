@@ -151,6 +151,14 @@ func New(ctx context.Context, opts Options) (*Runtime, error) {
 	opts.SystemPrompt = builder.Build()
 
 	histories := newHistoryStore(opts.MaxSessions)
+	if ss := opts.SessionStore; ss != nil {
+		histories.loader = ss.Load
+		histories.onEvict = func(sessionID string) {
+			if h, ok := histories.Loaded(sessionID); ok && h != nil {
+				_ = ss.Save(sessionID, h.All())
+			}
+		}
+	}
 
 	rt := &Runtime{
 		opts:      opts,
@@ -204,6 +212,11 @@ func (rt *Runtime) Run(ctx context.Context, req Request) (*Response, error) {
 	result, err := rt.runAgent(prep)
 	if err != nil {
 		return nil, err
+	}
+	if ss := rt.opts.SessionStore; ss != nil {
+		if h, ok := rt.histories.Loaded(sessionID); ok && h != nil {
+			_ = ss.Save(sessionID, h.All())
+		}
 	}
 	return rt.buildResponse(prep, result), nil
 }
@@ -287,6 +300,11 @@ func (rt *Runtime) RunStream(ctx context.Context, req Request) (<-chan StreamEve
 			isErr := true
 			out <- StreamEvent{Type: EventError, Output: runErr.Error(), IsError: &isErr}
 			return
+		}
+		if ss := rt.opts.SessionStore; ss != nil {
+			if h, ok := rt.histories.Loaded(req.SessionID); ok && h != nil {
+				_ = ss.Save(req.SessionID, h.All())
+			}
 		}
 		rt.buildResponse(prep, result)
 	}()
