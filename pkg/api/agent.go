@@ -155,7 +155,9 @@ func New(ctx context.Context, opts Options) (*Runtime, error) {
 		histories.loader = ss.Load
 		histories.onEvict = func(sessionID string) {
 			if h, ok := histories.Loaded(sessionID); ok && h != nil {
-				_ = ss.Save(sessionID, h.All())
+				if err := ss.Save(sessionID, h.All()); err != nil {
+					log.Printf("[session] save error session=%s: %v", sessionID, err)
+				}
 			}
 		}
 	}
@@ -215,7 +217,9 @@ func (rt *Runtime) Run(ctx context.Context, req Request) (*Response, error) {
 	}
 	if ss := rt.opts.SessionStore; ss != nil {
 		if h, ok := rt.histories.Loaded(sessionID); ok && h != nil {
-			_ = ss.Save(sessionID, h.All())
+			if err := ss.Save(sessionID, h.All()); err != nil {
+				log.Printf("[session] save error session=%s: %v", sessionID, err)
+			}
 		}
 	}
 	return rt.buildResponse(prep, result), nil
@@ -303,7 +307,9 @@ func (rt *Runtime) RunStream(ctx context.Context, req Request) (<-chan StreamEve
 		}
 		if ss := rt.opts.SessionStore; ss != nil {
 			if h, ok := rt.histories.Loaded(req.SessionID); ok && h != nil {
-				_ = ss.Save(req.SessionID, h.All())
+				if err := ss.Save(req.SessionID, h.All()); err != nil {
+					log.Printf("[session] save error session=%s: %v", req.SessionID, err)
+				}
 			}
 		}
 		rt.buildResponse(prep, result)
