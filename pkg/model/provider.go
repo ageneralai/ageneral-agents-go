@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"net/http"
 	"os"
 	"strings"
 	"sync"
@@ -35,6 +36,7 @@ type AnthropicProvider struct {
 	MaxRetries  int
 	System      string
 	Temperature *float64
+	HTTPClient  *http.Client
 	CacheTTL    time.Duration
 
 	mu      sync.RWMutex
@@ -66,6 +68,7 @@ func (p *AnthropicProvider) Model(ctx context.Context) (Model, error) {
 		MaxRetries:  p.MaxRetries,
 		System:      p.System,
 		Temperature: p.Temperature,
+		HTTPClient:  p.httpClient(),
 	})
 	if err != nil {
 		return nil, err
@@ -77,6 +80,20 @@ func (p *AnthropicProvider) Model(ctx context.Context) (Model, error) {
 		p.expires = time.Now().Add(p.CacheTTL)
 	}
 	return mdl, nil
+}
+
+func (p *AnthropicProvider) httpClient() *http.Client {
+	if p.HTTPClient != nil {
+		return p.HTTPClient
+	}
+	return http.DefaultClient
+}
+
+func (p *OpenAIProvider) httpClient() *http.Client {
+	if p.HTTPClient != nil {
+		return p.HTTPClient
+	}
+	return http.DefaultClient
 }
 
 func (p *AnthropicProvider) resolveAPIKey() string {
@@ -123,6 +140,7 @@ type OpenAIProvider struct {
 	MaxRetries  int
 	System      string
 	Temperature *float64
+	HTTPClient  *http.Client
 	CacheTTL    time.Duration
 
 	mu      sync.RWMutex
@@ -154,6 +172,7 @@ func (p *OpenAIProvider) Model(ctx context.Context) (Model, error) {
 		MaxRetries:  p.MaxRetries,
 		System:      p.System,
 		Temperature: p.Temperature,
+		HTTPClient:  p.httpClient(),
 	})
 	if err != nil {
 		return nil, err
