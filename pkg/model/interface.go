@@ -72,6 +72,16 @@ type ToolDefinition struct {
 	Parameters  map[string]any
 }
 
+// ToolChoice controls how the model selects tools.
+// "auto" (default) lets the model decide; "required" forces at least one tool call; "none" disables tool calls.
+type ToolChoice string
+
+const (
+	ToolChoiceAuto     ToolChoice = "auto"
+	ToolChoiceRequired ToolChoice = "required"
+	ToolChoiceNone     ToolChoice = "none"
+)
+
 // Request drives a single model completion.
 type Request struct {
 	Messages          []Message
@@ -81,7 +91,8 @@ type Request struct {
 	SessionID         string
 	MaxTokens         int
 	Temperature       *float64
-	EnablePromptCache bool // Enable prompt caching for system and recent messages
+	EnablePromptCache bool       // Enable prompt caching for system and recent messages
+	ToolChoice        ToolChoice // Controls tool selection; empty string means auto
 }
 
 // Usage reports token accounting for a completion.

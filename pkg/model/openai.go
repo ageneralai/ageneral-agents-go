@@ -281,6 +281,12 @@ func (m *openaiModel) buildParams(req Request) openai.ChatCompletionNewParams {
 	if len(req.Tools) > 0 {
 		tools := convertToolsToOpenAI(req.Tools)
 		params.Tools = tools
+		switch req.ToolChoice {
+		case ToolChoiceRequired:
+			params.ToolChoice = openai.ChatCompletionToolChoiceOptionUnionParam{OfAuto: openai.String(string(openai.ChatCompletionToolChoiceOptionAutoRequired))}
+		case ToolChoiceNone:
+			params.ToolChoice = openai.ChatCompletionToolChoiceOptionUnionParam{OfAuto: openai.String(string(openai.ChatCompletionToolChoiceOptionAutoNone))}
+		}
 	}
 
 	if m.temperature != nil {

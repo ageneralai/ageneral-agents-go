@@ -211,6 +211,7 @@ type Request struct {
 	TargetSubagent     string
 	ToolWhitelist      []string
 	ForceSkills        []string
+	ToolChoice         model.ToolChoice
 }
 
 type Response struct {

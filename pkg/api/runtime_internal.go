@@ -235,6 +235,7 @@ func (rt *Runtime) runLoop(prep preparedRun, mdl model.Model, hookAdapter *runti
 			Tools:             toolDefs,
 			System:            systemPrompt,
 			EnablePromptCache: enableCache,
+			ToolChoice:        prep.normalized.ToolChoice,
 		}
 		state.ModelInput = &req
 		state.Values["model.request"] = req

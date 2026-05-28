@@ -289,6 +289,12 @@ func (m *anthropicModel) buildParams(req Request) (anthropicsdk.MessageNewParams
 			return anthropicsdk.MessageNewParams{}, err
 		}
 		params.Tools = tools
+		switch req.ToolChoice {
+		case ToolChoiceRequired:
+			params.ToolChoice = anthropicsdk.ToolChoiceUnionParam{OfAny: &anthropicsdk.ToolChoiceAnyParam{}}
+		case ToolChoiceNone:
+			params.ToolChoice = anthropicsdk.ToolChoiceUnionParam{OfNone: &anthropicsdk.ToolChoiceNoneParam{}}
+		}
 	}
 
 	if m.temperature != nil {
